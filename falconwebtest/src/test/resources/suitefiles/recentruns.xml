@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">	
+<suite name="FalconRecentRuns">
+	<listeners>
+        <listener class-name="com.atmecs.falconrepoertdashboard.report.TestNGListeners"/>
+    </listeners>
+	<test name="Test1">
+		<classes>
+			<class name="com.atmecs.falconrepoertdashboard.testscripts.recentruns.TestRecentRunJob"></class>
+		</classes>
+	</test>
+	<test name="Test2">
+		<classes>
+			<class name="com.atmecs.falconrepoertdashboard.testscripts.recentruns.TestRecentRunsFilters"></class>
+		</classes>
+	</test>
+	<test name="Test3">
+		<classes>
+			<class name="com.atmecs.falconrepoertdashboard.testscripts.recentruns.TestExportTestResult"></class>
+		</classes>
+	</test>
+</suite>
