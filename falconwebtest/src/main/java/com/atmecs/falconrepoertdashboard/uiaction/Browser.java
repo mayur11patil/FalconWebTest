@@ -16,7 +16,7 @@ public class Browser {
 	public boolean openURL(String url, String browser) {
 		boolean isOpenURL = false;
 		
-		CreateDriver createObj = new CreateDriver(browser);
+		ManageDriver createObj = new ManageDriver(browser);
 		this.driver = createObj.getDriver();
 		isOpenURL = getUrl(url);
 

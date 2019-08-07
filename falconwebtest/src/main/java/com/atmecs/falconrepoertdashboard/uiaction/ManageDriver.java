@@ -12,15 +12,15 @@ import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 
 import com.atmecs.falconrepoertdashboard.constants.ProjectPath;
-import com.atmecs.falconrepoertdashboard.constants.UiResourcePath;
+import com.atmecs.falconrepoertdashboard.constants.ResourcePath;
 import com.atmecs.falconrepoertdashboard.uiaction.enums.BrowserType;
-import com.atmecs.falconrepoertdashboard.utils.Reporter;
+import com.atmecs.falconrepoertdashboard.utils.Report;
 
 
 
-public class CreateDriver {
+public class ManageDriver {
 	
-	Reporter report = new Reporter();
+	Report report = new Report();
 	WebDriver driver;
 	
 	
@@ -29,7 +29,7 @@ public class CreateDriver {
 	 * chrome, firefox or internet explorer
 	 * @param browser
 	 */
-	public CreateDriver(String browser) {
+	public ManageDriver(String browser) {
 		System.out.println("in run local mode");
 		try
 		{
@@ -37,7 +37,6 @@ public class CreateDriver {
 		case CHROME:{
 				System.out.println("in chrome set");
 				this.driver = setChromeDriver();
-				System.out.println("1 st"+driver);
 				report.info("Chrome driver set :"+driver);
 				break;
 			}
@@ -104,6 +103,12 @@ public class CreateDriver {
         FirefoxProfile profile = new FirefoxProfile();
  
         // Instructing firefox to use custom download location
+        /**
+         * Default Value: 0
+		 * This can be set to either 0, 1, or 2. When set to 0, Firefox will save all files on the user’s desktop. 
+		 * 1 saves the files in the Downloads folder and 
+		 * 2 saves file at the location specified for the most recent download.
+         */
         profile.setPreference("browser.download.folderList", 2);
  
         // Setting custom download directory
@@ -111,8 +116,10 @@ public class CreateDriver {
  
         // Skipping Save As dialog box for types of files with their MIME
         profile.setPreference("browser.helperApps.neverAsk.saveToDisk",
-                "text/csv,application/java-archive, application/x-msexcel,application/excel,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/x-excel,application/vnd.ms-excel,image/png,image/jpeg,text/html,text/plain,application/msword,application/xml,application/vnd.microsoft.portable-executable");
+                "text/csv,application/java-archive, application/x-msexcel,application/excel, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/x-excel,application/vnd.ms-excel,image/png,image/jpeg,text/html,text/plain,application/msword,application/xml,application/vnd.microsoft.portable-executable");
  
+        //profile.setPreference("browser.helperApps.neverAsk.saveToDisk", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
+        
         // Creating FirefoxOptions to set profile
         FirefoxOptions options = new FirefoxOptions();
         options.setProfile(profile);

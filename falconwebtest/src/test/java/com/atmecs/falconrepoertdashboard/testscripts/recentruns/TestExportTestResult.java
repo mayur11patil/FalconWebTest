@@ -9,13 +9,13 @@ import com.atmecs.falconrepoertdashboard.helpers.LoginHelpers;
 import com.atmecs.falconrepoertdashboard.helpers.ViewHelper;
 import com.atmecs.falconrepoertdashboard.testsuite.TestSuiteBase;
 import com.atmecs.falconrepoertdashboard.utils.PropertyParser;
-import com.atmecs.falconrepoertdashboard.utils.Reporter;
+import com.atmecs.falconrepoertdashboard.utils.Report;
 import com.atmecs.falconrepoertdashboard.verifyresult.VerifyResult;
 
 public class TestExportTestResult extends TestSuiteBase {
 
 	
-	Reporter report = new Reporter();
+	Report report = new Report();
 	String sheetName="";
 	LoginHelpers loginhelper = new LoginHelpers(sheetName);
 	DashboardHelper dashboardHelper = new DashboardHelper();
@@ -29,7 +29,7 @@ public class TestExportTestResult extends TestSuiteBase {
 	}
 	
 	@Test
-	public void testExportTestResult() {
+	public void testExportTestResult() throws InterruptedException {
 		verification.verifyTrue(dashboardHelper.navigateToRecentRuns(driver), "Verify Recent run page appears");
 		verification.verifyTrue(dashboardHelper.verifyProductNameOnViewPage(driver), "verify after click on product it goes on view page");
 		verification.verifyTrue(viewHelper.verifyFileDownload(driver), "Verify file downloaded successfully");

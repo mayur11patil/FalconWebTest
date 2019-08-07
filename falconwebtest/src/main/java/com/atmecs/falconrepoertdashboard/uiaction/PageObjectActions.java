@@ -7,20 +7,14 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.atmecs.falconrepoertdashboard.uiaction.enums.LocatorType;
 import com.atmecs.falconrepoertdashboard.utils.CommanUtils;
-import com.atmecs.falconrepoertdashboard.utils.Reporter;
+import com.atmecs.falconrepoertdashboard.utils.Report;
 
 public class PageObjectActions {
 	
-	Reporter report = new Reporter();
+	Report report = new Report();
 	CommanUtils commanUtil = new CommanUtils();
-	//WebDriver driver;
 	
-	
-	/*public PageObjectActions(WebDriver  driver) {
-		this.driver = driver;
-	}*/
-
-	public boolean click(WebDriver driver, LocatorType locator, String locatorValue,long timeOutInSeconds) {
+	public boolean click(WebDriver driver, LocatorType locator, String locatorValue, long timeOutInSeconds) {
 
 		WebDriverWait wait = new WebDriverWait(driver, timeOutInSeconds);
 		boolean isClicked = true;
@@ -72,9 +66,7 @@ public class PageObjectActions {
 		catch(Exception e) {
 			isClicked = false;
 		}
-		
+
 		return isClicked;
-
 	}
-
 }

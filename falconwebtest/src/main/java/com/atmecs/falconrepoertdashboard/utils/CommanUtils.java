@@ -7,9 +7,12 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -18,6 +21,7 @@ import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.atmecs.falconrepoertdashboard.constants.ResourcePath;
 import com.google.gson.annotations.Until;
 
 public class CommanUtils {
@@ -198,4 +202,32 @@ public class CommanUtils {
 		return true;
 		
 	}
+	
+	/*public boolean renameDownloadFile() {
+			
+		File oldfile =new File(UiResourcePath.DOWNLOAD_FILE_PATH);
+		File newfile =new File("newfile.ext");
+		
+		if(oldfile.renameTo(newfile)){
+			System.out.println("Renamed");
+			}else{
+			System.out.println("Not renamed");
+			}
+	}*/
+	
+	public static void takeSnapShot(WebDriver driver,String fileWithPath) throws Exception{
+
+		//Convert web driver object to TakeScreenshot
+		TakesScreenshot scrShot =((TakesScreenshot)driver);
+
+		//Call getScreenshotAs method to create image file
+		File SrcFile=scrShot.getScreenshotAs(OutputType.FILE);
+
+		//Move image file to new destination
+		File DestFile=new File(fileWithPath);
+
+		//Copy file at destination
+		FileUtils.copyFile(SrcFile, DestFile);
+
+    }
 }

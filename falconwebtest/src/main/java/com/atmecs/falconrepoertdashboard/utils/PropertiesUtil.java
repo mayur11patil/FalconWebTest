@@ -5,7 +5,7 @@ import java.util.Properties;
 
 public class PropertiesUtil {
 	
-	static Reporter report = new Reporter();
+	static Report report = new Report();
 	
 	public static Properties loadProperty(String propertiesFilePath) {
 		Properties properties = new Properties();

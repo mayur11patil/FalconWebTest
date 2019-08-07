@@ -5,17 +5,19 @@ import java.util.logging.Logger;
 
 import org.apache.log4j.PropertyConfigurator;
 
-public class Reporter {
+import com.atmecs.falconrepoertdashboard.constants.ResourcePath;
+
+public class Report {
 	
 	Logger logger = null;
 	
-	public Reporter() {
+	public Report() {
 		getlogger();
-		logger = Logger.getLogger(Reporter.class.getName());
+		logger = Logger.getLogger(Report.class.getName());
 	}
 	
 	public void getlogger() {
-		PropertyConfigurator.configure("D:\\codepractice\\falconwebtest\\src\\main\\resources\\log4j.properties");
+		PropertyConfigurator.configure(ResourcePath.LOG4J_PROPERTIES_FILE);	
 	}
 
 	public void info(String message){

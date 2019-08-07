@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.atmecs.falconrepoertdashboard.testscripts.recentruns.TestRecentRunsFilters">
+      <class name="com.atmecs.falconrepoertdashboard.testscripts.recentruns.TestRecentRunJob">
         <methods>
-          <include name="testRecentRunsPage"/>
           <include name="preSetup"/>
           <include name="tearDown"/>
+          <include name="testRecentRunsJob"/>
         </methods>
-      </class> <!-- com.atmecs.falconrepoertdashboard.testscripts.recentruns.TestRecentRunsFilters -->
+      </class> <!-- com.atmecs.falconrepoertdashboard.testscripts.recentruns.TestRecentRunJob -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

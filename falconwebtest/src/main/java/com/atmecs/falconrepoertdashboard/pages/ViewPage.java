@@ -7,19 +7,19 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import com.atmecs.falconrepoertdashboard.constants.UiResourcePath;
+import com.atmecs.falconrepoertdashboard.constants.ResourcePath;
 import com.atmecs.falconrepoertdashboard.uiaction.PageObjectActions;
 import com.atmecs.falconrepoertdashboard.uiaction.enums.LocatorType;
 import com.atmecs.falconrepoertdashboard.utils.CommanUtils;
 import com.atmecs.falconrepoertdashboard.utils.PropertiesUtil;
-import com.atmecs.falconrepoertdashboard.utils.Reporter;
+import com.atmecs.falconrepoertdashboard.utils.Report;
 
 public class ViewPage {
 	
-	Reporter report = new Reporter();
+	Report report = new Report();
 	CommanUtils commanutil = new CommanUtils();
 	
-	static Properties viewPageProps = PropertiesUtil.loadProperty(UiResourcePath.VIEW_PAGE);
+	static Properties viewPageProps = PropertiesUtil.loadProperty(ResourcePath.VIEW_PAGE);
 	PageObjectActions action = new PageObjectActions();
 	
 	/** All getters
@@ -38,13 +38,17 @@ public class ViewPage {
 	public String getTotalTestLink() {
 		return viewPageProps.getProperty("total_test_links");
 	}
+	public String getPreloader() {
+		return viewPageProps.getProperty("preloader_div");
+	}
 	
 	/** all actions
 	 * 
 	 */
 	public boolean clickOnkDownloadLink(WebDriver driver) {
 		boolean isClick = false;
-		isClick = action.click(driver, LocatorType.XPATH, getDownloadLink(), 10);
+		if(commanutil.invisibilityOfElement(driver, getPreloader())) {
+		isClick = action.click(driver, LocatorType.XPATH, getDownloadLink(), 10);}
 		report.info("CLick on download link :"+isClick);
 		return isClick;
 	}

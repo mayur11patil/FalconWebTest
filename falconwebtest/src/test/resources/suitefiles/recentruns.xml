@@ -4,17 +4,17 @@
 	<listeners>
         <listener class-name="com.atmecs.falconrepoertdashboard.report.TestNGListeners"/>
     </listeners>
-	<test name="Test1">
+	<test name="TestRecentRunJob">
 		<classes>
 			<class name="com.atmecs.falconrepoertdashboard.testscripts.recentruns.TestRecentRunJob"></class>
 		</classes>
 	</test>
-	<test name="Test2">
+	<test name="TestRecentRunsFilters">
 		<classes>
 			<class name="com.atmecs.falconrepoertdashboard.testscripts.recentruns.TestRecentRunsFilters"></class>
 		</classes>
 	</test>
-	<test name="Test3">
+	<test name="TestExportTestResult">
 		<classes>
 			<class name="com.atmecs.falconrepoertdashboard.testscripts.recentruns.TestExportTestResult"></class>
 		</classes>

@@ -9,25 +9,25 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import com.atmecs.falconrepoertdashboard.constants.TimeOuts;
-import com.atmecs.falconrepoertdashboard.constants.UiResourcePath;
+import com.atmecs.falconrepoertdashboard.constants.ResourcePath;
 import com.atmecs.falconrepoertdashboard.uiaction.PageObjectActions;
 import com.atmecs.falconrepoertdashboard.uiaction.enums.LocatorType;
 import com.atmecs.falconrepoertdashboard.utils.CommanUtils;
 import com.atmecs.falconrepoertdashboard.utils.PropertiesUtil;
-import com.atmecs.falconrepoertdashboard.utils.Reporter;
+import com.atmecs.falconrepoertdashboard.utils.Report;
 
 
 public class Dashboard {
 	
-	Reporter report = new Reporter();
+	Report report = new Report();
 	CommanUtils commanutil = new CommanUtils();
 	
 	
-	static Properties dashBoard = PropertiesUtil.loadProperty(UiResourcePath.DASHBOARD_HOME);
-	static Properties recentRunsProps = PropertiesUtil.loadProperty(UiResourcePath.RECENT_RUNS_PAGE);
+	static Properties dashBoard = PropertiesUtil.loadProperty(ResourcePath.DASHBOARD_HOME);
+	static Properties recentRunsProps = PropertiesUtil.loadProperty(ResourcePath.RECENT_RUNS_PAGE);
 	PageObjectActions action = new PageObjectActions();
 	
-	/* All getters
+	/* All getters to get the xpath of particular object
 	 *  
 	 */
 	public String getMainMenuLinks(String menuName) {
@@ -57,13 +57,7 @@ public class Dashboard {
 	public String getPreloader() {
 		return recentRunsProps.getProperty("preloader_div");
 	}
-	
-	
-	//recent runs getters
-	
-	
-	
-	
+		
 	
 	/* All page actions
 	 * 
@@ -74,17 +68,10 @@ public class Dashboard {
 		boolean isClick = false;
 		if(commanutil.invisibilityOfElement(driver, getPreloader())) {
 		isClick = commanutil.ignoreClickInterceptAndClickOnElement(driver, getMainMenuLinks(menuName));}
-		//isClick = action.click(driver,LocatorType.XPATH, getMainMenuLinks(menuName), TimeOuts.WEDRIVER_WAIT_IN_SEC);
 		report.info("click on menu link "+menuName +" :"+isClick);
 		return isClick;
 	}
 	
-	public boolean clickOnPageIntion(WebDriver driver) {
-		boolean isclicked=false;
-		isclicked = action.click(driver, LocatorType.XPATH, "(//a/span[contains(text(),'1')])[1]", 10);
-		System.out.println("is clicked 1 +"+isclicked);
-		return isclicked;
-	}
 	
 	public boolean clickOnNextPageInition(WebDriver driver) {
 		boolean isclicked = false;
@@ -129,16 +116,8 @@ public class Dashboard {
 		action.click(driver, LocatorType.XPATH, getHeader(headerName), 10);
 	}
 	
-	public void clickSortHeaderDescending(WebDriver driver, String headerName) {  //desc
-		action.click(driver, LocatorType.XPATH, "//th[@class='header sortable sort-desc'][1]", 10);
-	}
-	
 	public void clickOnFirstPage(WebDriver driver) {
 		action.click(driver, LocatorType.XPATH, getFirstPage(), 10);
-	}
-	
-	public void clickOnFirstPage(WebDriver driver, String productName) {
-		action.click(driver, LocatorType.XPATH, "//td[contains(text(),'xxxxx')]".replace("xxxx", productName), 10);
 	}
 	
 	public boolean clicOnkProductByName(WebDriver driver, String productName) {

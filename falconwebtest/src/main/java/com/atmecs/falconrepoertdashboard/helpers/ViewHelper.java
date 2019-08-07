@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import com.atmecs.falconrepoertdashboard.constants.UiResourcePath;
+import com.atmecs.falconrepoertdashboard.constants.ResourcePath;
 import com.atmecs.falconrepoertdashboard.pages.ViewPage;
 import com.atmecs.falconrepoertdashboard.utils.XlsReader;
 
@@ -17,7 +17,7 @@ public class ViewHelper {
 	
 	public boolean verifyFileDownload(WebDriver driver) {
 		viewPage.clickOnkDownloadLink(driver);
-		viewPage.verifyFileDownloaded(driver, UiResourcePath.DOWNLOAD_FILE_PATH);
+		viewPage.verifyFileDownloaded(driver, ResourcePath.DOWNLOAD_FILE_PATH);
 		return true;
 	}
 	
@@ -26,9 +26,9 @@ public class ViewHelper {
 		int totalTestPass;
 		int totalTestFail;
 		
-		int actualtotalTestCount = Integer.parseInt(xlsReader.getData(UiResourcePath.DOWNLOAD_FILE_PATH, "Test Report", 8, 1));
-		int actualtotalTestPassCount = Integer.parseInt(xlsReader.getData(UiResourcePath.DOWNLOAD_FILE_PATH, "Test Report", 9, 1));
-		int actualtotalTestFailCount = Integer.parseInt(xlsReader.getData(UiResourcePath.DOWNLOAD_FILE_PATH, "Test Report", 10, 1));
+		int actualtotalTestCount = Integer.parseInt(xlsReader.getData(ResourcePath.DOWNLOAD_FILE_PATH, "Test Report", 8, 1));
+		int actualtotalTestPassCount = Integer.parseInt(xlsReader.getData(ResourcePath.DOWNLOAD_FILE_PATH, "Test Report", 9, 1));
+		int actualtotalTestFailCount = Integer.parseInt(xlsReader.getData(ResourcePath.DOWNLOAD_FILE_PATH, "Test Report", 10, 1));
 		System.out.println("count "+actualtotalTestCount);
 		
 		totalTestRuns = viewPage.getTotalTestCount(driver);

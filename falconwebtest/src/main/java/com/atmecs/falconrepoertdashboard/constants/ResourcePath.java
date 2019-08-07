@@ -2,7 +2,7 @@ package com.atmecs.falconrepoertdashboard.constants;
 
 
 
-public class UiResourcePath extends ProjectPath {
+public class ResourcePath extends ProjectPath {
 	
 	public static String getTestDataFilePath() {
 		String CS_TEST_DATA_FILE;
@@ -13,7 +13,7 @@ public class UiResourcePath extends ProjectPath {
 	/**
 	 * download file path
 	 */
-	public static final String DOWNLOAD_FILE_PATH = DOWNLOAD_HOME + "TestReport-REST API TEST RESULT-Web Services-08-02-2019.xlsx";
+	public static final String DOWNLOAD_FILE_PATH = DOWNLOAD_HOME + "TestReport-REST API TEST RESULT-Web Services-08-07-2019.xlsx";
 	
 	/**
 	 * properties file paths
@@ -34,4 +34,7 @@ public class UiResourcePath extends ProjectPath {
 	 * TestNG xml path
 	 */
 	public static final String TESTNG_XML_PATH = USER_HOME + "testng.xml";
+
+	public static final String LOG4J_PROPERTIES_FILE=RESOURCES_HOME + "log4j.properties";
+	
 }

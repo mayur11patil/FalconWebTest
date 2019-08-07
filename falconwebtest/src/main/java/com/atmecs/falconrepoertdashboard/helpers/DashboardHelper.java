@@ -16,7 +16,7 @@ public class DashboardHelper {
 		 return dashboard.isRecentRunPageDispaly(driver);
 	}
 	
-	public boolean cpageIn(WebDriver driver) {
+	/*public boolean cpageIn(WebDriver driver) {
 		dashboard.clickOnPageIntion(driver);
 		return true;
 	}
@@ -24,12 +24,12 @@ public class DashboardHelper {
 	public void getAll(WebDriver driver) {
 		dashboard.clickNextPageAndGetListOfAllProduct(driver);
 		System.out.println(dashboard.clickNextPageAndGetListOfAllProduct(driver).size());
-	}
+	}*/
 	
 	public boolean verifyHeaderSorting(WebDriver driver) {
 		
 		List<String> originalList = dashboard.clickNextPageAndGetListOfAllProduct(driver);
-		System.out.println("original "+originalList.toString());
+		
 		List<String> expAscList = originalList;
 		Collections.sort(expAscList);
 		System.out.println("expect "+expAscList.toString());
@@ -39,12 +39,7 @@ public class DashboardHelper {
 		System.out.println("expdesc "+expDesclist.toString());
 		
 		dashboard.clickOnFirstPage(driver);
-		try {
-			Thread.sleep(5000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		
 		dashboard.clickSortHeader(driver, "Product Name");
 		List<String> actualDescList = dashboard.clickNextPageAndGetListOfAllProduct(driver);
 		System.out.println("actual desc"+actualDescList.toString());
@@ -56,8 +51,8 @@ public class DashboardHelper {
 	
 	public boolean verifyProductNameOnViewPage(WebDriver driver) {
 		String productName = "REST API TEST RESULT";
-		dashboard.clicOnkProductByName(driver, productName);
-		return true;
+		
+		return dashboard.clicOnkProductByName(driver, productName);
 	}
 
 	

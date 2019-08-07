@@ -1,19 +1,25 @@
 package com.atmecs.falconrepoertdashboard.testscripts.recentruns;
 
+
+import java.io.IOException;
+
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.atmecs.falconrepoertdashboard.helpers.DashboardHelper;
 import com.atmecs.falconrepoertdashboard.helpers.LoginHelpers;
 import com.atmecs.falconrepoertdashboard.testsuite.TestSuiteBase;
 import com.atmecs.falconrepoertdashboard.utils.PropertyParser;
-import com.atmecs.falconrepoertdashboard.utils.Reporter;
+import com.atmecs.falconrepoertdashboard.utils.Report;
 import com.atmecs.falconrepoertdashboard.verifyresult.VerifyResult;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
 
 public class TestRecentRunJob extends TestSuiteBase {
 
-	Reporter report = new Reporter();
+	Report report = new Report();
 	String sheetName="";
 	LoginHelpers loginhelper = new LoginHelpers(sheetName);
 	DashboardHelper dashboardHelper = new DashboardHelper();
@@ -32,7 +38,8 @@ public class TestRecentRunJob extends TestSuiteBase {
 	}
 	
 	@AfterMethod
-	public void tearDown() {
+	public void tearDown() throws IOException {
 		driver.quit();
+		
 	}
 }

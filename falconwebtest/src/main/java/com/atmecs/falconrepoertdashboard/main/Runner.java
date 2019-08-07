@@ -5,7 +5,7 @@ import java.util.List;
 
 import org.testng.TestNG;
 
-import com.atmecs.falconrepoertdashboard.constants.UiResourcePath;
+import com.atmecs.falconrepoertdashboard.constants.ResourcePath;
 
 public class Runner {
 
@@ -18,7 +18,7 @@ public class Runner {
 		List<String> suitefiles=new ArrayList<String>();
 
 		// Add xml file which you have to execute
-		suitefiles.add(UiResourcePath.TESTNG_XML_PATH);
+		suitefiles.add(ResourcePath.TESTNG_XML_PATH);
 
 		// now set xml file for execution
 		runner.setTestSuites(suitefiles);
