@@ -30,6 +30,9 @@ public class Dashboard {
 	/* All getters to get the xpath of particular object
 	 *  
 	 */
+	public String getFalconLogoIcon() {
+		return recentRunsProps.getProperty("falcon_logo");
+	}
 	public String getMainMenuLinks(String menuName) {
 		return dashBoard.getProperty("main_menu_link").replace("xxxxx", menuName);
 	}
@@ -64,6 +67,14 @@ public class Dashboard {
 	 */
 	
 	//All click actions
+	public boolean clickOnFalconLogo(WebDriver driver) {
+		boolean isclicked = false;
+		if(commanutil.isElementPresentAndClickable(driver, getFalconLogoIcon())) {
+			isclicked = action.click(driver, LocatorType.XPATH, getFalconLogoIcon(), 10);
+		}
+		return isclicked;
+	}
+	
 	public boolean clickOnMenuLinks(WebDriver driver,String menuName) {
 		boolean isClick = false;
 		if(commanutil.invisibilityOfElement(driver, getPreloader())) {
@@ -81,7 +92,7 @@ public class Dashboard {
 		return isclicked;
 	}
 	
-	public List<String> clickNextPageAndGetListOfAllProduct(WebDriver driver) {
+	public List<String> clickNextPageAndGetListOfAllProduct(WebDriver driver) {	
 		List<WebElement> list= new ArrayList<WebElement>();
 		List<WebElement> listOfWebelementOnfirstPage=null;
 		List<String> listOfAllFromAllPages = new ArrayList<String>();
@@ -111,6 +122,7 @@ public class Dashboard {
 		return listOfAllFromAllPages;
 	}
 	
+		
 	public void clickSortHeader(WebDriver driver, String headerName) { //partially it is asc
 		commanutil.scrollIntoView(driver, false, driver.findElement(By.xpath(getHeader(headerName))));
 		action.click(driver, LocatorType.XPATH, getHeader(headerName), 10);

@@ -10,50 +10,43 @@ import com.atmecs.falconrepoertdashboard.pages.Dashboard;
 public class DashboardHelper {
 	
 	Dashboard dashboard = new Dashboard();
-	
+	/*
+	 * below method navigate to the recent runs page from main page of application.
+	 */
 	public boolean navigateToRecentRuns(WebDriver driver) {
 		 dashboard.clickOnMenuLinks(driver,"Recent Runs");
 		 return dashboard.isRecentRunPageDispaly(driver);
 	}
-	
-	/*public boolean cpageIn(WebDriver driver) {
-		dashboard.clickOnPageIntion(driver);
-		return true;
-	}
-	
-	public void getAll(WebDriver driver) {
-		dashboard.clickNextPageAndGetListOfAllProduct(driver);
-		System.out.println(dashboard.clickNextPageAndGetListOfAllProduct(driver).size());
-	}*/
-	
+	/*
+	 * below method checks wheather after click on productname header it will sort the, 
+	 * product name in ascending order or not
+	 */
 	public boolean verifyHeaderSorting(WebDriver driver) {
 		
 		List<String> originalList = dashboard.clickNextPageAndGetListOfAllProduct(driver);
 		
 		List<String> expAscList = originalList;
 		Collections.sort(expAscList);
-		System.out.println("expect "+expAscList.toString());
 		
 		List<String> expDesclist = originalList;
 		Collections.sort(expDesclist, Collections.reverseOrder());
-		System.out.println("expdesc "+expDesclist.toString());
 		
 		dashboard.clickOnFirstPage(driver);
 		
 		dashboard.clickSortHeader(driver, "Product Name");
 		List<String> actualDescList = dashboard.clickNextPageAndGetListOfAllProduct(driver);
-		System.out.println("actual desc"+actualDescList.toString());
 		
 		return actualDescList.equals(expDesclist);
 		
 	}
-	
-	
+	/*
+	 * below method checks whether after click on particylar product it goes,
+	 * to the view page or not
+	 */
 	public boolean verifyProductNameOnViewPage(WebDriver driver) {
 		String productName = "REST API TEST RESULT";
 		
 		return dashboard.clicOnkProductByName(driver, productName);
 	}
 
-	
 }

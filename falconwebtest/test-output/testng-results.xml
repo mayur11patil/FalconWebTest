@@ -1,63 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
-    <line>
-      <![CDATA[PASS : Verify Recent run page appears]]>
-    </line>
-    <line>
-      <![CDATA[PASS : verify after click on product it goes on view page]]>
-    </line>
     <line>
       <![CDATA[PASS : Verify Recent run page appears]]>
     </line>
     <line>
       <![CDATA[PASS : Verify after click on header product name it sort correctly]]>
     </line>
-    <line>
-      <![CDATA[PASS : Verify Recent run page appears]]>
-    </line>
-    <line>
-      <![CDATA[PASS : verify after click on product it goes on view page]]>
-    </line>
-    <line>
-      <![CDATA[PASS : Verify file downloaded successfully]]>
-    </line>
-    <line>
-      <![CDATA[PASS : Verify test result from downloaded file successfully]]>
-    </line>
   </reporter-output>
-  <suite name="FalconRecentRuns" duration-ms="68991" started-at="2019-08-07T14:33:59Z" finished-at="2019-08-07T14:35:08Z">
+  <suite name="Default suite" duration-ms="33669" started-at="2019-08-09T07:13:45Z" finished-at="2019-08-09T07:14:19Z">
     <groups>
     </groups>
-    <test name="TestRecentRunJob" duration-ms="17374" started-at="2019-08-07T14:33:59Z" finished-at="2019-08-07T14:34:16Z">
-      <class name="com.atmecs.falconrepoertdashboard.testscripts.recentruns.TestRecentRunJob">
-        <test-method status="PASS" signature="preSetup()[pri:0, instance:com.atmecs.falconrepoertdashboard.testscripts.recentruns.TestRecentRunJob@12028586]" name="preSetup" is-config="true" duration-ms="10752" started-at="2019-08-07T14:33:59Z" finished-at="2019-08-07T14:34:10Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- preSetup -->
-        <test-method status="PASS" signature="testRecentRunsJob()[pri:0, instance:com.atmecs.falconrepoertdashboard.testscripts.recentruns.TestRecentRunJob@12028586]" name="testRecentRunsJob" duration-ms="5586" started-at="2019-08-07T14:34:10Z" finished-at="2019-08-07T14:34:15Z">
-          <reporter-output>
-            <line>
-              <![CDATA[PASS : Verify Recent run page appears]]>
-            </line>
-            <line>
-              <![CDATA[PASS : verify after click on product it goes on view page]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- testRecentRunsJob -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.atmecs.falconrepoertdashboard.testscripts.recentruns.TestRecentRunJob@12028586]" name="tearDown" is-config="true" duration-ms="971" started-at="2019-08-07T14:34:16Z" finished-at="2019-08-07T14:34:16Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- com.atmecs.falconrepoertdashboard.testscripts.recentruns.TestRecentRunJob -->
-    </test> <!-- TestRecentRunJob -->
-    <test name="TestRecentRunsFilters" duration-ms="31906" started-at="2019-08-07T14:34:17Z" finished-at="2019-08-07T14:34:49Z">
+    <test name="Default test" duration-ms="33669" started-at="2019-08-09T07:13:45Z" finished-at="2019-08-09T07:14:19Z">
       <class name="com.atmecs.falconrepoertdashboard.testscripts.recentruns.TestRecentRunsFilters">
-        <test-method status="PASS" signature="preSetup()[pri:0, instance:com.atmecs.falconrepoertdashboard.testscripts.recentruns.TestRecentRunsFilters@16267862]" name="preSetup" is-config="true" duration-ms="8473" started-at="2019-08-07T14:34:17Z" finished-at="2019-08-07T14:34:26Z">
+        <test-method status="PASS" signature="preSetup()[pri:0, instance:com.atmecs.falconrepoertdashboard.testscripts.recentruns.TestRecentRunsFilters@1f28c152]" name="preSetup" is-config="true" duration-ms="8926" started-at="2019-08-09T07:13:45Z" finished-at="2019-08-09T07:13:54Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- preSetup -->
-        <test-method status="PASS" signature="testRecentRunsFilters()[pri:0, instance:com.atmecs.falconrepoertdashboard.testscripts.recentruns.TestRecentRunsFilters@16267862]" name="testRecentRunsFilters" duration-ms="22355" started-at="2019-08-07T14:34:26Z" finished-at="2019-08-07T14:34:48Z">
+        <test-method status="PASS" signature="testRecentRunsFilters()[pri:0, instance:com.atmecs.falconrepoertdashboard.testscripts.recentruns.TestRecentRunsFilters@1f28c152]" name="testRecentRunsFilters" duration-ms="23670" started-at="2019-08-09T07:13:54Z" finished-at="2019-08-09T07:14:18Z">
           <reporter-output>
             <line>
               <![CDATA[PASS : Verify Recent run page appears]]>
@@ -67,39 +27,11 @@
             </line>
           </reporter-output>
         </test-method> <!-- testRecentRunsFilters -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.atmecs.falconrepoertdashboard.testscripts.recentruns.TestRecentRunsFilters@16267862]" name="tearDown" is-config="true" duration-ms="1066" started-at="2019-08-07T14:34:48Z" finished-at="2019-08-07T14:34:49Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.atmecs.falconrepoertdashboard.testscripts.recentruns.TestRecentRunsFilters@1f28c152]" name="tearDown" is-config="true" duration-ms="1021" started-at="2019-08-09T07:14:18Z" finished-at="2019-08-09T07:14:19Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- com.atmecs.falconrepoertdashboard.testscripts.recentruns.TestRecentRunsFilters -->
-    </test> <!-- TestRecentRunsFilters -->
-    <test name="TestExportTestResult" duration-ms="18647" started-at="2019-08-07T14:34:49Z" finished-at="2019-08-07T14:35:08Z">
-      <class name="com.atmecs.falconrepoertdashboard.testscripts.recentruns.TestExportTestResult">
-        <test-method status="PASS" signature="preSetup()[pri:0, instance:com.atmecs.falconrepoertdashboard.testscripts.recentruns.TestExportTestResult@146044d7]" name="preSetup" is-config="true" duration-ms="7275" started-at="2019-08-07T14:34:49Z" finished-at="2019-08-07T14:34:57Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- preSetup -->
-        <test-method status="PASS" signature="testExportTestResult()[pri:0, instance:com.atmecs.falconrepoertdashboard.testscripts.recentruns.TestExportTestResult@146044d7]" name="testExportTestResult" duration-ms="10430" started-at="2019-08-07T14:34:57Z" finished-at="2019-08-07T14:35:07Z">
-          <reporter-output>
-            <line>
-              <![CDATA[PASS : Verify Recent run page appears]]>
-            </line>
-            <line>
-              <![CDATA[PASS : verify after click on product it goes on view page]]>
-            </line>
-            <line>
-              <![CDATA[PASS : Verify file downloaded successfully]]>
-            </line>
-            <line>
-              <![CDATA[PASS : Verify test result from downloaded file successfully]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- testExportTestResult -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.atmecs.falconrepoertdashboard.testscripts.recentruns.TestExportTestResult@146044d7]" name="tearDown" is-config="true" duration-ms="931" started-at="2019-08-07T14:35:07Z" finished-at="2019-08-07T14:35:08Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- com.atmecs.falconrepoertdashboard.testscripts.recentruns.TestExportTestResult -->
-    </test> <!-- TestExportTestResult -->
-  </suite> <!-- FalconRecentRuns -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

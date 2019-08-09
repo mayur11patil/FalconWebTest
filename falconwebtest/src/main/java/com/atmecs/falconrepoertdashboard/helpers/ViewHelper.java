@@ -15,12 +15,18 @@ public class ViewHelper {
 	ViewPage viewPage = new ViewPage();
 	XlsReader xlsReader = new XlsReader();
 	
+	/*
+	 * below method checks that file is download or not 
+	 */
 	public boolean verifyFileDownload(WebDriver driver) {
 		viewPage.clickOnkDownloadLink(driver);
 		viewPage.verifyFileDownloaded(driver, ResourcePath.DOWNLOAD_FILE_PATH);
 		return true;
 	}
 	
+	/*
+	 *  below method checks the test result from application and downloaded file matching or not
+	 */
 	public boolean verifyTestResultFromFile(WebDriver driver) {
 		int totalTestRuns;
 		int totalTestPass;
